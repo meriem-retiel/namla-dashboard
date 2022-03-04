@@ -20,7 +20,7 @@ const Topbar = () => {
             aria-label="upload picture"
             component="span"
           >
-            <Badge badgeContent={4} small color="primary">
+            <Badge badgeContent={4} color="primary">
               <NotificationsIcon />
             </Badge>
           </IconButton>
