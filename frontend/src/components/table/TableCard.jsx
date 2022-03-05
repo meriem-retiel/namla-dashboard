@@ -8,7 +8,7 @@ import TableRow from "@mui/material/TableRow";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import { Card } from "react-bootstrap";
 
-export default function TableCard({ header = [], rows = [] }) {
+export default function TableCard({ title, header = [], rows = [] }) {
   const rowsKeys = rows.length ? Object.keys(rows[0]) : []; // Get rows keys
 
   //For styling Header
@@ -35,13 +35,9 @@ export default function TableCard({ header = [], rows = [] }) {
   return (
     <Card border="light" className="px-0 shadow-sm">
       <Card.Body className="px-0">
-        <Card.Title>Clusters Logs</Card.Title>
+        <Card.Title>{title}</Card.Title>
         <TableContainer sx={{ maxHeight: 200 }}>
-          <Table
-            sx={{ minWidth: 650, maxHeight: 600 }}
-            size="small"
-            stickyHeader
-          >
+          <Table sx={{ minWidth: 650 }} size="small" stickyHeader>
             <TableHead>
               <TableRow>
                 {header.map((item, key) => (
@@ -56,7 +52,7 @@ export default function TableCard({ header = [], rows = [] }) {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   {rowsKeys.map((key) => (
-                    <TableCell>{row[key]}</TableCell>
+                    <TableCell key={key}>{row[key]}</TableCell>
                   ))}
                 </StyledTableRow>
               ))}

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  min-height: 95vh;
 }
 
 .App-logo {
@@ -23,7 +24,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.fill-height {
+  height: 100vh;
+}
 .App-link {
   color: #61dafb;
 }
@@ -46,11 +49,6 @@
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  border-radius: 10px;
 }
 
 /* Handle */

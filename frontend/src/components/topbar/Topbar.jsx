@@ -8,7 +8,7 @@ import "./Topbar.css";
 const Topbar = ({ logo = "Logo", routes = [] }) => {
   return (
     <>
-      <Navbar sticky="top" bg="light" variant="light">
+      <Navbar fixed="top" bg="light" variant="light" className="py-0">
         <Container>
           <Navbar.Brand href="#" className="fw-bold">
             {logo}

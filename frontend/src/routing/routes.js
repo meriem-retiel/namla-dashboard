@@ -1,6 +1,6 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
-import Sidebar from "../components/Sidebar/Sidebar";
+import { Route, Switch, Redirect } from "react-router-dom";
+import { Clusters } from "../views/Home/Clusters";
 import { Section } from "../views/Section";
 const ROUTES = [
   {
@@ -14,7 +14,7 @@ const ROUTES = [
         key: "HOME_CLUSTERS",
         name: "Clusters",
         exact: true,
-        component: () => <h1>Home clustoers</h1>,
+        component: () => <Clusters />,
       },
       {
         path: "/home/edge",
@@ -95,10 +95,12 @@ function RouteWithSubRoutes(route) {
 export function RenderRoutes({ routes }) {
   return (
     <Switch>
+      routes.length?
       {routes.map((route, i) => {
         return <RouteWithSubRoutes key={route.key} {...route} />;
       })}
-      <Route component={() => <h1>Not Found!</h1>} />
+      <Redirect to={routes[0].path} />
+      :null
     </Switch>
   );
 }
@@ -107,7 +109,7 @@ export function RenderRoutes({ routes }) {
 export function getSubroutes(routes, key) {
   let result = "not found";
   routes.forEach((route) => {
-    if (route.key == key) {
+    if (route.key === key) {
       result = route;
     } else {
       if (route.routes) {

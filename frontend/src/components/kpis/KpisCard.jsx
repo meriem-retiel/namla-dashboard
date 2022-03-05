@@ -2,11 +2,11 @@ import React from "react";
 import { Card, Container, Row } from "react-bootstrap";
 import { KpisCardItem } from "./KpisCardItem";
 
-export const KpisCard = ({ items = [] }) => {
+export const KpisCard = ({ items = [], title }) => {
   return (
-    <Card border="light" className="shadow-sm" style={{ width: "25rem" }}>
+    <Card border="light" className="shadow-sm">
       <Card.Body>
-        <Card.Title>Summary</Card.Title>
+        <Card.Title>{title}</Card.Title>
         <Container>
           <Row>
             {items.map((item, key) => (
