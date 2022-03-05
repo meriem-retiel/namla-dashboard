@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  min-height: 95vh;
 }
 
 .App-logo {
@@ -23,9 +24,16 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.fill-height {
+  height: 100vh;
+}
 .App-link {
   color: #61dafb;
+}
+.link {
+  text-decoration: none;
+  color: inherit;
+  text-align: start;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +43,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+/* Customize the scrollbar 
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(170, 169, 169);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(170, 169, 169);
 }
