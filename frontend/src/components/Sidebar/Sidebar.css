@@ -3,3 +3,9 @@
   top: 4.4rem;
   bottom: 0;
 }
+.link-active {
+  color: red;
+}
+.link-inactive {
+  color: red;
+}

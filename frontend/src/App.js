@@ -1,10 +1,12 @@
 import "./App.css";
-import Home from "./views/Home";
+import ROUTES, { RenderRoutes } from "./routing/routes";
+import { Layout } from "./views/Layout";
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Layout />
+      <RenderRoutes routes={ROUTES} />
     </div>
   );
 }
